@@ -1,6 +1,5 @@
 package com.example.minoltan.citizenapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +10,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
-    private EditText mUsername;
+    private EditText mUsername, mEmail, mPhone, mPassword;
     private DatabaseReference mDatabase;
     private Button mRegister;
 
@@ -21,13 +20,22 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         mUsername = (EditText) findViewById(R.id.Username);
+        mEmail = (EditText) findViewById(R.id.Email);
+        mPhone = (EditText) findViewById(R.id.Phone);
+        mPassword = (EditText) findViewById(R.id.Password);
         mRegister = (Button) findViewById(R.id.Register);
+
+
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
 
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Name").setValue("Minoltan");
+                String name = mUsername.getText().toString().trim();
+                mDatabase.child("Name").setValue(name);
 
             }
         });
