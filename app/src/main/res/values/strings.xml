@@ -2,5 +2,9 @@
     <string name="app_name">CitizenApp</string>
     <string name="hi_welcome_ncitizen">Hi Welcome Citizen</string>
     <string name="login">Login</string>
+    <string name="textview">TextView</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
     <string name="signup">Signup</string>
+    <string name="register">Register</string>
 </resources>

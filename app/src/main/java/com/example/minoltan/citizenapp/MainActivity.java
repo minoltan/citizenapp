@@ -1,5 +1,6 @@
 package com.example.minoltan.citizenapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     private Button mLogin,mSignup;
-    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,20 +22,21 @@ public class MainActivity extends AppCompatActivity {
         mLogin = (Button) findViewById(R.id.Login);
         mSignup = (Button) findViewById(R.id.Signup);
 
-        //Access FireBase
-        mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
-        mLogin.setOnClickListener(new View.OnClickListener() {
+
+        mSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Create a child in DB
-                mDatabase.child("Name").setValue("Issack");
-                //Assign the Value to the child
+
+                Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 
-        mSignup.setOnClickListener(new View.OnClickListener() {
+        mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
