@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "896466927124",
+    "firebase_url": "https://citizenappredit.firebaseio.com",
+    "project_id": "citizenappredit",
+    "storage_bucket": "citizenappredit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896466927124:android:e4eb17391f1423ea",
+        "android_client_info": {
+          "package_name": "com.example.minoltan.citizenapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896466927124-vfj9323qf8bntrjqm9lhhioefcav0c8h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.minoltan.citizenapp",
+            "certificate_hash": "b76585ad8c505658a29b349a6dc30ed101e4811b"
+          }
+        },
+        {
+          "client_id": "896466927124-mtib3pu6huivop5ohggjadrcp8dnru6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRpHIrYm2eqTxVqIlbeWVMwdN0l9Ivoe4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896466927124-mtib3pu6huivop5ohggjadrcp8dnru6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
