@@ -6,12 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -19,13 +23,32 @@ public class SignupActivity extends AppCompatActivity {
     private EditText mUsername, mEmail, mPhone, mPassword;
     private DatabaseReference mDatabase;
     private Button mRegister;
+    private TextView mName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        mUsername = (EditText) findViewById(R.id.Username);
+        //Retrive data from DB
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Name");
+        mName = (TextView) findViewById(R.id.name);
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                String name = dataSnapshot.getValue().toString();
+                mName.setText("Name :" + name);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+       /* mUsername = (EditText) findViewById(R.id.Username);
         mEmail = (EditText) findViewById(R.id.Email);
         mPhone = (EditText) findViewById(R.id.Phone);
         mPassword = (EditText) findViewById(R.id.Password);
@@ -60,6 +83,8 @@ public class SignupActivity extends AppCompatActivity {
                 });
 
             }
-        });
+        });*/
     }
 }
+
+
